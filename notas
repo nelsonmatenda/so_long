@@ -1,0 +1,9 @@
+Precisa compilar o codigo com o gcc e com as flags certas,
+flags essas que diminuem o assembly gerado pelo gcc e
+muitas outras coisas
+
+gcc -O0 -Wall -S -fno-asynchronous-unwind-tables -fcf-protection=none doNothinfProg.c
+
+as --gstabs -o doNothinfProg.o doNothinfProg.s
+
+gcc -o doNothingProg doNothingProg.o
