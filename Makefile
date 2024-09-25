@@ -18,7 +18,7 @@ GREEN= \033[0;32m
 
 all: $(NAME)
 
-$(NAME):	$(DIR_OBJ) $(LIBFT) $(OBJS) mlx
+$(NAME):	$(DIR_OBJ) $(LIBFT) $(OBJS) $(MLX_PATH) $(APP)
 	cc $(FLAG) $(APP) $(OBJS) $(MLX_PATH) $(MLX_FLAGS) $(LIBFT) -o $(NAME)
 	@echo "\n${GREEN}> so_long was successfuly compiled 🎉"
 
@@ -30,7 +30,16 @@ $(LIBFT): $(LIB_DIR)
 
 $(DIR_OBJ):
 		@mkdir -p $(DIR_OBJ)
-mlx:
-	make -C $(MLX_DIR)
+$(MLX_PATH):
+	@make -C $(MLX_DIR)
 
-.PHONY: all clean fclean re mlx
+clean:
+	make fclean -C $(LIB_DIR)
+	make clean -C $(MLX_DIR)
+
+fclean: clean
+	rm -rf so_long
+
+re: fclean all
+
+.PHONY: all clean fclean re
