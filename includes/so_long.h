@@ -6,17 +6,17 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/01 14:33:12 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:14:05 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include "../mlx_linux/mlx.h"
 # include "../libft/include/ft_printf.h"
 # include <fcntl.h>
 # include <sys/types.h>
-# include <unistd.h>
 
 // ENUM
 enum	e_error
