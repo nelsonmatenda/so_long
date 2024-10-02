@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/01 16:14:05 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:09:16 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 // ENUM
 enum	e_error
 {
-	MALLOC_ERROR = -20,
+	MALLOC_ERROR	= -20,
+	NO_MAPS			= -21,
 };
 enum	e_game
 {

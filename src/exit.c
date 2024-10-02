@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:34:36 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/01 16:14:24 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:28:30 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	error_msg(int error, char *msg_error)
 		ft_printf("\033[90m%s\033[0m\n", msg_error);
 }
 
-void	sucess_msg(int status)
+void	success_msg(int status)
 {
 	if (status == SUCCESS)
 		ft_printf("\033[0;32mSuccess: You won the game!\033[0m\n");
@@ -33,7 +33,9 @@ void	sucess_msg(int status)
 void	*ft_exit(t_game *game, int status, char *msg)
 {
 	if (game)
+	{
 		//TODO: faça free do game todo.
+	}
 	if (status < 0)
 	{
 		error_msg(status, msg);
