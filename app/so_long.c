@@ -27,8 +27,4 @@ int	main(void)
 	// // Mostrar a imagem na janela
 	// mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	// mlx_loop(mlx);
-
-	int fd = open("../maps/default.ber", O_RDONLY);
-	while
 }
-
