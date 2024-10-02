@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 09:40:29 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/02 13:38:30 by nfigueir         ###   ########.fr       */
+/*   Created: 2024/10/02 13:38:41 by nfigueir          #+#    #+#             */
+/*   Updated: 2024/10/02 14:08:02 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	main(int ac, char **av)
+char
+
+void	get_map(t_game *game, char *path_map)
 {
-	t_game	*game;
-	(void)av;
-	if (ac != 2)
-		return (*(int *)ft_exit(NULL, NO_MAPS, "Theres no maps: Try > ./so_long maps/default.ber"));
-	return (0);
+	char	*buffer;
+
+	game->map->fd = open(path_map, O_RDONLY);
+	if (game->map->fd == -1)
+		ft_exit(game, FD_ERROR, "in get_map");
+	buffer = pick_all_map_item(game);
+	game->map->item = ft_split(buffer, '\n');
+	free(buffer);
 }
