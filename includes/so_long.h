@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/02 13:54:46 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/03 10:36:20 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "../libft/include/ft_printf.h"
 # include <fcntl.h>
 # include <sys/types.h>
+# include <stdio.h> // TODO: deletar no final do projecto! usado para testar
 
 // ENUM
 enum	e_error
@@ -45,5 +46,6 @@ typedef struct s_game
 }t_game;
 
 void	*ft_exit(t_game *game, int status, char *msg);
-
+t_game	*ft_init_struct_game(void);
+void	get_map(t_game *game, char *path_map);
 #endif

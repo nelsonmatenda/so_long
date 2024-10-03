@@ -6,13 +6,26 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:38:41 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/02 14:08:02 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/03 10:13:32 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-char
+char	*pick_all_map_item(t_game *game)
+{
+	char	*line;
+	char	*buffer;
+
+	buffer = ft_strdup("");
+	line = get_next_line(game->map->fd);
+	while (line != NULL)
+	{
+		buffer = ft_strjoin(buffer, line);
+		line = get_next_line(game->map->fd);
+	}
+	return (buffer);
+}
 
 void	get_map(t_game *game, char *path_map)
 {
