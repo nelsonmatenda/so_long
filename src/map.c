@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:38:41 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/03 15:21:48 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/03 15:26:33 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ static char	*pick_all_map_item(t_game *game)
 
 	buffer = ft_strdup("");
 	if (!buffer)
-		return ((char *)ft_exit(game, MALLOC_ERROR, "in pick_all_map_item -> ft_strdup"));
+		return ((char *)ft_exit(game, MALLOC_ERROR, "pick_all_map_item -> ft_strdup"));
 	line = get_next_line(game->map->fd);
 	while (line != NULL)
 	{
 		tmp = buffer;
 		buffer = ft_strjoin(buffer, line);
 		if (!buffer)
-			return (free(tmp), free(line), (char *)ft_exit(game, MALLOC_ERROR, "in pick_all_map_item -> ft_strjoin"));
+			return (free(tmp), free(line),
+			(char *)ft_exit(game, MALLOC_ERROR,
+			"in pick_all_map_item -> ft_strjoin"));
 		free(tmp);
 		free(line);
 		line = get_next_line(game->map->fd);
