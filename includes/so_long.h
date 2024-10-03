@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/03 11:48:51 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/03 15:18:09 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@
 # include <sys/types.h>
 # include <stdio.h> // TODO: deletar no final do projecto! usado para testar
 
+# define FILE_EXTENSION ".ber"
+
 // ENUM
 enum	e_error
 {
 	MALLOC_ERROR	= -20,
 	NO_MAPS			= -21,
 	FD_ERROR		= -22,
+	EXTENSION		= -23
 };
 enum	e_game
 {
