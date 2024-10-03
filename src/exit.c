@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:34:36 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/02 11:28:30 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/03 11:47:07 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ void	success_msg(int status)
 void	*ft_exit(t_game *game, int status, char *msg)
 {
 	if (game)
-	{
-		//TODO: faça free do game todo.
-	}
+		ft_free(game);
 	if (status < 0)
 	{
 		error_msg(status, msg);

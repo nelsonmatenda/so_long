@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/03 10:36:20 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/03 11:48:51 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_game
 	t_map	*map;
 }t_game;
 
+void	ft_free(t_game *game);
 void	*ft_exit(t_game *game, int status, char *msg);
 t_game	*ft_init_struct_game(void);
 void	get_map(t_game *game, char *path_map);

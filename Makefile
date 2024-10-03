@@ -1,7 +1,7 @@
 NAME = so_long
 APP  = ./app/so_long.c
 MLX  = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
-SRCS = exit.c init.c map.c
+SRCS = exit.c init.c map.c free.c
 DIR_SRC = ./src/
 DIR_OBJ = ./objs/
 OBJS =	$(addprefix $(DIR_OBJ), $(SRCS:.c=.o))
