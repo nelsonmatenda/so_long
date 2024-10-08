@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/03 15:18:09 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:18:59 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 enum	e_error
 {
 	MALLOC_ERROR	= -20,
-	NO_MAPS			= -21,
-	FD_ERROR		= -22,
+	MAP_ERR			= -21,
+	FILE_ERROR		= -22,
 	EXTENSION		= -23
 };
 enum	e_game
@@ -36,10 +36,17 @@ enum	e_game
 	QUIT	= 30,
 };
 
+typedef struct s_vector
+{
+	int	x;
+	int	y;
+}	t_vector;
+
 typedef struct s_map
 {
-	int		fd;
-	char	**item;
+	int			fd;
+	char		**item;
+	t_vector	*size;
 }		t_map;
 
 

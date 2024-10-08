@@ -24,7 +24,7 @@ RM			= rm -rf
 AR			= ar -rcs
 RN			= ranlib
 
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -g -Wall -Wextra -Werror
 
 NAME		= libft.a
 

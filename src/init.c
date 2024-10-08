@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:25:41 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/03 10:39:37 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:40:48 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@ static t_map	*init_s_map(t_game *game)
 	map = (t_map *)malloc(sizeof(t_map) * 1);
 	if (!map)
 		return ((t_map *)ft_exit(game, MALLOC_ERROR, "in init_s_map"));
+	map->size =  (t_vector *)malloc(sizeof(t_vector));
+	if (!map->size)
+		return ((t_map *)ft_exit(game, MALLOC_ERROR, "in init_s_map"));
 	map->fd = -1;
+	map->size->x = 0;
+	map->size->y = 0;
 	map->item = NULL;
 	return (map);
 }

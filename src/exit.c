@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:34:36 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/03 15:22:23 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/08 09:18:38 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	error_msg(int error, char *msg_error)
 		ft_printf("\033[1;31mError:\033[0m Memory allocation failed\n");
 	if (error == EXTENSION)
 		ft_printf("\033[1;31mError:\033[0m Invalid file extension.\n");
-	if (error == FD_ERROR)
+	if (error == FILE_ERROR)
 		ft_printf("\033[1;31mError:\033[0m Failed to open file.\n");
 	if (msg_error)
 		ft_printf("\033[90m%s\033[0m\n", msg_error);

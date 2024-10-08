@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:37:00 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/03 12:01:46 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:45:59 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ static void	free_map(t_game *game)
 	{
 		while(game->map->item[++i])
 			free(game->map->item[i]);
+		free(game->map->item);
 	}
-	free(game->map->item);
+	if (game->map->size)
+		free(game->map->size);
 	game->map->item = NULL;
 	free(game->map);
 	game->map = NULL;
