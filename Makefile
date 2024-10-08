@@ -1,10 +1,10 @@
 NAME = so_long
 APP  = ./app/so_long.c
 MLX  = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
-SRCS = so_long.c
+SRCS = exit.c init.c map.c free.c
 DIR_SRC = ./src/
 DIR_OBJ = ./objs/
-OBJS =	$(addprefix $(DIR_OBJ), $($(SRCS:.c=.o)))
+OBJS =	$(addprefix $(DIR_OBJ), $(SRCS:.c=.o))
 FLAG =	-g -Wall -Wextra -Werror
 # LIB MLX
 MLX_DIR = ./mlx_linux
@@ -19,6 +19,7 @@ GREEN= \033[0;32m
 all: $(NAME)
 
 $(NAME):	$(DIR_OBJ) $(LIBFT) $(OBJS) $(MLX_PATH) $(APP)
+	echo $(OBJS)
 	cc $(FLAG) $(APP) $(OBJS) $(MLX_PATH) $(MLX_FLAGS) $(LIBFT) -o $(NAME)
 	@echo "\n${GREEN}> so_long was successfuly compiled 🎉"
 
@@ -39,6 +40,7 @@ clean:
 
 fclean: clean
 	rm -rf so_long
+	rm -rf objs
 
 re: fclean all
 
