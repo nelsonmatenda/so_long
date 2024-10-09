@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:34:36 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/08 09:18:38 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/09 15:23:18 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 void	error_msg(int error, char *msg_error)
 {
 	if (error == MALLOC_ERROR)
-		ft_printf("\033[1;31mError:\033[0m Memory allocation failed\n");
+		ft_printf("\033[1;31mError:\033[0m Memory allocation failed.\n");
 	if (error == EXTENSION)
 		ft_printf("\033[1;31mError:\033[0m Invalid file extension.\n");
 	if (error == FILE_ERROR)
 		ft_printf("\033[1;31mError:\033[0m Failed to open file.\n");
+	if (error == MAP_ERR)
+		ft_printf("\033[1;31mError:\033[0m Something wrong with map.\n");
 	if (msg_error)
 		ft_printf("\033[90m%s\033[0m\n", msg_error);
 }
