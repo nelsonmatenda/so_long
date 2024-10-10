@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mlx_pixel_put.c                                 :+:      :+:    :+:   */
+/*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 14:49:44 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/09/26 14:50:10 by nfigueir         ###   ########.fr       */
+/*   Created: 2024/10/10 11:11:45 by nfigueir          #+#    #+#             */
+/*   Updated: 2024/10/10 11:35:29 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	print_map(char **map)
 {
-	char	*dst;
-
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	int y = 0;
+	while(map[y])
+	{
+		int x = 0;
+		while (map[y][x])
+		{
+			if (map[y][x] == '1')
+				printf("%c", map[y][x]);
+			else
+				printf("\033[1;31m%c\033[0m", map[y][x]);
+			x++;
+		}
+		y++;
+		printf("\n");
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:25:41 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/08 12:40:48 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/09 15:11:10 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,21 @@ static t_map	*init_s_map(t_game *game)
 	map->size->x = 0;
 	map->size->y = 0;
 	map->item = NULL;
+	map->ec = 0;
+	map->wc = 0;
+	map->cc = 0;
+	map->xc = 0;
+	map->pc = 0;
 	return (map);
+}
+
+static void	init_s_player(t_game *game)
+{
+	game->player = (t_player *)malloc(sizeof(t_player));
+	if (!game->player)
+		ft_exit(game, MALLOC_ERROR, "init.c > init_s_player()");
+	game->player->pos.x = 0;
+	game->player->pos.y = 0;
 }
 
 static t_game	*init_s_game(void)
@@ -37,6 +51,15 @@ static t_game	*init_s_game(void)
 	if (!game)
 		return ((t_game *)ft_exit(game, MALLOC_ERROR, "in init_s_game"));
 	game->map = NULL;
+	game->player = NULL;
+	game->moves[0][0] = -1;
+	game->moves[0][1] = 0;
+	game->moves[1][0] = 1;
+	game->moves[1][1] = 0;
+	game->moves[2][0] = 0;
+	game->moves[2][1] = -1;
+	game->moves[3][0] = 0;
+	game->moves[3][1] = 1;
 	return (game);
 }
 
@@ -46,5 +69,6 @@ t_game	*ft_init_struct_game(void)
 
 	game = init_s_game();
 	game->map = init_s_map(game);
+	init_s_player(game);
 	return (game);
 }

@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   utils_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 09:40:29 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/09 15:20:39 by nfigueir         ###   ########.fr       */
+/*   Created: 2024/10/09 15:14:04 by nfigueir          #+#    #+#             */
+/*   Updated: 2024/10/09 15:17:55 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	main(int ac, char **av)
+int	is_border(t_game *game, t_vector pos)
 {
-	t_game	*game;
-	(void)av;
-	if (ac != 2)
-		return (*(int *)ft_exit(NULL, MAP_ERR, "Theres no maps: Try > ./so_long maps/default.ber"));
-	game = ft_init_struct_game();
-	get_map(game, av[1]);
-	check_map(game);
-	int i = -1;
-	while(game->map->item[++i])
-	{
-		printf("%s", game->map->item[i]);
-		puts("");
-	}
-	return (*(int *)ft_exit(game, SUCCESS, "OKAY"));
+	if (pos.y == 0 || pos.x == 0
+		|| pos.y == (game->map->size->y - 1)
+		|| pos.x == (game->map->size->x - 1))
+		return (1);
+	return (0);
 }
