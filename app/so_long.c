@@ -6,11 +6,23 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:40:29 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/10 13:07:54 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:43:46 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+int	window_close(t_game *game)
+{
+	return (*(int *)ft_exit(game, QUIT, "This game is too easy, try again"));
+}
+
+// int	hook_close(t_game *game)
+// {
+// 	mlx_hook(game->win.ptr, 17, 0, window_close, game);
+// 	mlx_hook(game->win.ptr, 2, 1L << 0, key_press, game);
+// 	return (0);
+// }
 
 int	main(int ac, char **av)
 {
@@ -21,12 +33,16 @@ int	main(int ac, char **av)
 	game = ft_init_struct_game();
 	get_map(game, av[1]);
 	check_map(game);
-	int i = -1;
 	init_mlx(game);
+	init_sprites(game);
+	mlx_key_hook(game->win.ptr, key_press, game);
+	//mlx_hook(game->win.ptr, 2, 1L << 0, key_press, game);//hook_close(game);
+	int i = -1;
 	while(game->map->item[++i])
 	{
 		printf("%s", game->map->item[i]);
 		puts("");
 	}
-	return (*(int *)ft_exit(game, SUCCESS, "OKAY"));
+	mlx_loop(game->mlx);
+	return (*(int *)ft_exit(game, SUCCESS, "Great Job"));
 }
