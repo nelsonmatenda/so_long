@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:37:00 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/09 14:26:58 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:17:53 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,13 @@ void	ft_free(t_game *game)
 		free_s_map(game);
 	if (game->player)
 		free_s_player(game);
+	if (game->mlx)
+	{
+		if (game->win.ptr)
+			mlx_destroy_window(game->mlx, game->win.ptr);
+		mlx_destroy_display(game->mlx);
+		free(game->mlx);
+	}
 	free(game);
 	game = NULL;
 }

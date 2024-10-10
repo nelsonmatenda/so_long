@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:40:29 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/09 15:20:39 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:07:54 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int ac, char **av)
 	get_map(game, av[1]);
 	check_map(game);
 	int i = -1;
+	init_mlx(game);
 	while(game->map->item[++i])
 	{
 		printf("%s", game->map->item[i]);
