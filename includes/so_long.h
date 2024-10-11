@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/10 16:05:24 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/11 13:20:43 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "../mlx_linux/mlx.h"
 # include "../libft/include/ft_printf.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
 # include <fcntl.h>
 # include <sys/types.h>
 # include <stdio.h> // TODO: deletar no final do projecto! usado para testar

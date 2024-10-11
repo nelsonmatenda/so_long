@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:40:29 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/10 16:43:46 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:25:40 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,23 @@ int	window_close(t_game *game)
 	return (*(int *)ft_exit(game, QUIT, "This game is too easy, try again"));
 }
 
-// int	hook_close(t_game *game)
+// int	test_key_press(int key, t_game *game)
 // {
-// 	mlx_hook(game->win.ptr, 17, 0, window_close, game);
-// 	mlx_hook(game->win.ptr, 2, 1L << 0, key_press, game);
+// 	if (key == KEY_Q || key == KEY_ESC)
+// 	{
+// 		mlx_destroy_window(game->mlx, game->win.ptr);
+// 		mlx_destroy_display(game->mlx);
+// 	}
+// 	printf("%d\n", key);
 // 	return (0);
 // }
+
+int	hook_close(t_game *game)
+{
+	mlx_hook(game->win.ptr, 17, 0, window_close, game);
+	mlx_hook(game->win.ptr, 2, 1L << 0, key_press, game);
+	return (0);
+}
 
 int	main(int ac, char **av)
 {
@@ -35,14 +46,7 @@ int	main(int ac, char **av)
 	check_map(game);
 	init_mlx(game);
 	init_sprites(game);
-	mlx_key_hook(game->win.ptr, key_press, game);
-	//mlx_hook(game->win.ptr, 2, 1L << 0, key_press, game);//hook_close(game);
-	int i = -1;
-	while(game->map->item[++i])
-	{
-		printf("%s", game->map->item[i]);
-		puts("");
-	}
+	hook_close(game);
 	mlx_loop(game->mlx);
 	return (*(int *)ft_exit(game, SUCCESS, "Great Job"));
 }

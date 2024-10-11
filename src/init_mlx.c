@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 12:35:29 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/10 15:19:13 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:44:11 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ static t_img	create_sprite(char *path, t_game *game)
 {
 	t_img sprite;
 
-	sprite.img = mlx_xpm_file_to_image(game->mlx, path, &sprite.size.x, \
-		&sprite.size.y);
+	sprite.img = mlx_xpm_file_to_image(game->mlx, path, &sprite.size.x, &sprite.size.y);
 	if (!sprite.img)
 		ft_exit(game, SPT_ERR, path);
-	sprite.addr = mlx_get_data_addr(sprite.img, &sprite.bits_per_pixel, \
-		&sprite.size_line, &sprite.endian);
+	sprite.addr = mlx_get_data_addr(sprite.img, &sprite.bits_per_pixel, &sprite.size_line, &sprite.endian);
 	return (sprite);
 }
 
@@ -46,5 +44,4 @@ void	init_mlx(t_game *game)
 		ft_exit(game, MLX_ERR, "Something with mlx_new_window()");
 	game->win.height = game->map->size->y * IMG_HGHT;
 	game->win.width = game->map->size->x * IMG_WID;
-	mlx_loop(game->mlx);
 }
