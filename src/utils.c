@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:04:33 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/13 21:16:41 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:25:44 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_free_matrix(char **matrix)
 	}
 	free(matrix);
 }
+
 void	ft_free_matrix_with_indice(char **matrix, int i)
 {
 	while (i > 0)
@@ -69,6 +70,7 @@ char	**ft_copy_matrix(char **matrix)
 t_img	init_s_img(void)
 {
 	t_img	img;
+
 	img.addr = NULL;
 	img.img = NULL;
 	img.bits_per_pixel = 0;

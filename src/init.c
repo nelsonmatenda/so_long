@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:25:41 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/13 21:29:44 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:26:22 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static t_map	*init_s_map(t_game *game)
 	map = (t_map *)ft_calloc(1, sizeof(t_map));
 	if (!map)
 		return ((t_map *)ft_exit(game, MALLOC_ERROR, "in init_s_map"));
-	map->size =  (t_vector *)ft_calloc(1, sizeof(t_vector));
+	map->size = (t_vector *)ft_calloc(1, sizeof(t_vector));
 	if (!map->size)
 		return ((t_map *)ft_exit(game, MALLOC_ERROR, "in init_s_map"));
 	map->fd = -1;
@@ -75,6 +75,7 @@ static t_game	*init_s_game(void)
 	game->win.width = 0;
 	return (game);
 }
+
 void	init_s_texture(t_game *game)
 {
 	game->tex = (t_textures *)ft_calloc(1, sizeof(t_textures));

@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/13 21:17:11 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:21:44 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ typedef struct s_player
 	t_vector	pos;
 	t_img		sprite;
 	int			moves;
-} t_player;
+}				t_player;
 
 typedef struct s_game
 {
@@ -122,7 +122,7 @@ typedef struct s_game
 	void		*mlx;
 	t_win		win;
 	t_textures	*tex;
-}t_game;
+}				t_game;
 
 // ERROR HANDLER
 void	ft_free(t_game *game);
@@ -142,7 +142,7 @@ void	check_map(t_game *game);
 void	init_mlx(t_game *game);
 void	init_sprites(t_game *game);
 int		key_press(int key, t_game *game);
-int	window_close(t_game *game);
+int		window_close(t_game *game);
 
 //RENDER
 void	render(t_game *game);
