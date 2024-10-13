@@ -1,7 +1,8 @@
 NAME = so_long
 APP  = ./app/so_long.c
 MLX  = -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
-SRCS = exit.c init.c map.c free.c utils.c check_map.c utils_map.c print_map.c
+SRCS = exit.c init.c map.c free.c utils.c check_map.c utils_map.c print_map.c \
+		init_mlx.c playing.c
 DIR_SRC = ./src/
 DIR_OBJ = ./objs/
 OBJS =	$(addprefix $(DIR_OBJ), $(SRCS:.c=.o))

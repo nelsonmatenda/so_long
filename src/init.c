@@ -41,6 +41,7 @@ static void	init_s_player(t_game *game)
 		ft_exit(game, MALLOC_ERROR, "init.c > init_s_player()");
 	game->player->pos.x = 0;
 	game->player->pos.y = 0;
+	game->player->sprite.img = NULL;
 }
 
 static t_game	*init_s_game(void)
@@ -62,6 +63,16 @@ static t_game	*init_s_game(void)
 	game->moves[3][1] = 1;
 	return (game);
 }
+void	init_s_texture(t_game *game)
+{
+	game->tex = (t_textures *)malloc(sizeof(t_textures));
+	if (!game->tex)
+		ft_exit(game, MALLOC_ERROR, "in init_s_texture");
+	game->tex->coin.img = NULL;
+	game->tex->exit.img = NULL;
+	game->tex->floor.img = NULL;
+	game->tex->wall.img = NULL;
+}
 
 t_game	*ft_init_struct_game(void)
 {
@@ -70,5 +81,6 @@ t_game	*ft_init_struct_game(void)
 	game = init_s_game();
 	game->map = init_s_map(game);
 	init_s_player(game);
+	init_s_texture(game);
 	return (game);
 }

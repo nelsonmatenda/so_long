@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:34:36 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/09 15:23:18 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/10 15:23:17 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ void	error_msg(int error, char *msg_error)
 		ft_printf("\033[1;31mError:\033[0m Failed to open file.\n");
 	if (error == MAP_ERR)
 		ft_printf("\033[1;31mError:\033[0m Something wrong with map.\n");
+	if (error == MLX_ERR)
+		ft_printf("\033[1;31mError:\033[0m Lib MLX failed.\n");
+	if (error == SPT_ERR)
+		ft_printf("\033[1;31mError:\033[0m Sprites not found.\n");
 	if (msg_error)
 		ft_printf("\033[90m%s\033[0m\n", msg_error);
 }
@@ -29,11 +33,11 @@ void	error_msg(int error, char *msg_error)
 void	success_msg(int status)
 {
 	if (status == SUCCESS)
-		ft_printf("\033[0;32mSuccess: You won the game!\033[0m\n");
+		ft_printf("\033[0;32mSuccess:\033[0m You won the game!\033[0m\n");
 	if (status == LOOSE)
-		ft_printf("You loose the game\n");
+		ft_printf("\033[1;33mYou loose the game\n\033[0m");
 	if (status == QUIT)
-		ft_printf("\033[1;33mNotice: A player has exited the game.\033[0m\n");
+		ft_printf("\033[1;33mNotice:\033[0m Player has exited the game.\033[0m\n");
 }
 
 void	*ft_exit(t_game *game, int status, char *msg)

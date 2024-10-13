@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:37:00 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/09 14:26:58 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:17:53 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,40 @@ static void	free_s_map(t_game *game)
 
 static void	free_s_player(t_game *game)
 {
-	if (game->player)
-		free(game->player);
+	if (game->player->sprite.img)
+		mlx_destroy_image(game->mlx, game->player->sprite.img);
+	free(game->player);
 }
+
+static void	free_s_texture(t_game *game)
+{
+	if (game->tex->coin.img)
+		mlx_destroy_image(game->mlx, game->tex->coin.img);
+	if (game->tex->exit.img)
+		mlx_destroy_image(game->mlx, game->tex->exit.img);
+	if (game->tex->floor.img)
+		mlx_destroy_image(game->mlx, game->tex->floor.img);
+	if (game->tex->wall.img)
+		mlx_destroy_image(game->mlx, game->tex->wall.img);
+	free(game->tex);
+	game->tex = NULL;
+}
+
 void	ft_free(t_game *game)
 {
 	if (game->map)
 		free_s_map(game);
 	if (game->player)
 		free_s_player(game);
+	if (game->tex)
+		free_s_texture(game);
+	if (game->mlx)
+	{
+		if (game->win.ptr)
+			mlx_destroy_window(game->mlx, game->win.ptr);
+		mlx_destroy_display(game->mlx);
+		free(game->mlx);
+	}
 	free(game);
 	game = NULL;
 }
