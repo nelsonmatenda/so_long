@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:04:33 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/09 14:08:11 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 21:16:41 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,17 @@ char	**ft_copy_matrix(char **matrix)
 	}
 	new_matrix[y] = NULL;
 	return (new_matrix);
+}
+
+t_img	init_s_img(void)
+{
+	t_img	img;
+	img.addr = NULL;
+	img.img = NULL;
+	img.bits_per_pixel = 0;
+	img.endian = 0;
+	img.size.x = 0;
+	img.size.y = 0;
+	img.size_line = 0;
+	return (img);
 }

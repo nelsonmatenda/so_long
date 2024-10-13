@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:38:41 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/08 12:17:54 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 19:54:42 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ static void	check_extension_map(t_game *game, char *path_map)
 {
 	int	i;
 
-	i = ft_strlen(path_map) - 4;
+	i = ft_strlen(path_map) - 5;
 	if (i < 0)
 		ft_exit(game, EXTENSION, "Try > <file>.ber");
-	if (ft_strncmp((path_map + i), FILE_EXTENSION, ft_strlen(FILE_EXTENSION)))
+	if (ft_strncmp((path_map + (i + 1)), FILE_EXTENSION, ft_strlen(FILE_EXTENSION)))
 		ft_exit(game, EXTENSION, "Try > <file>.ber");
 }
 

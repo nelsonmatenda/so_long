@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:54:27 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/10 12:07:18 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 20:29:58 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	check_element_on_map(t_game *game, char c, t_vector pos)
 	{
 		game->player->pos.y = pos.y;
 		game->player->pos.x = pos.x;
-		game->map->spawn.y = pos.y;
-		game->map->spawn.x = pos.x;
 		game->map->pc++;
 	}
 	else if (c == 'C')

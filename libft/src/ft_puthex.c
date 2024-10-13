@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   puthex.c                                           :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:56:33 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/06/05 14:56:40 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 21:33:54 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*hex_to_str(unsigned int n, char *base)
 	char	*hex;
 
 	size = count_hex(n);
-	hex = (char *)malloc(sizeof(char) * (size + 1));
+	hex = (char *)ft_calloc((size + 1), sizeof(char));
 	if (!hex)
 		return (NULL);
 	hex[size] = '\0';

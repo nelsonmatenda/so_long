@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:40:29 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/11 15:25:40 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 16:26:05 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,6 @@ int	window_close(t_game *game)
 {
 	return (*(int *)ft_exit(game, QUIT, "This game is too easy, try again"));
 }
-
-// int	test_key_press(int key, t_game *game)
-// {
-// 	if (key == KEY_Q || key == KEY_ESC)
-// 	{
-// 		mlx_destroy_window(game->mlx, game->win.ptr);
-// 		mlx_destroy_display(game->mlx);
-// 	}
-// 	printf("%d\n", key);
-// 	return (0);
-// }
 
 int	hook_close(t_game *game)
 {
@@ -47,6 +36,7 @@ int	main(int ac, char **av)
 	init_mlx(game);
 	init_sprites(game);
 	hook_close(game);
+	render(game);
 	mlx_loop(game->mlx);
-	return (*(int *)ft_exit(game, SUCCESS, "Great Job"));
+	return (*(int *)ft_exit(game, SUCCESS, NULL));
 }

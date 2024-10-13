@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/11 13:20:43 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 21:17:11 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 
 # include "../mlx_linux/mlx.h"
 # include "../libft/include/ft_printf.h"
-# include <X11/X.h>
-# include <X11/keysym.h>
 # include <fcntl.h>
 # include <sys/types.h>
-# include <stdio.h> // TODO: deletar no final do projecto! usado para testar
 
 # define FILE_EXTENSION ".ber"
 # define IMG_WID 32
@@ -31,9 +28,25 @@
 # define EXIT_XPM "./textures/exit.xpm"
 # define PLAYER_XPM "./textures/player.xpm"
 
+// MAP ITEM
+# define WALL	'1'
+# define COIN	'C'
+# define EXIT	'E'
+# define PLAYER	'P'
+# define FLOOR	'0'
+
 // KEY CODES
 # define KEY_Q		113
 # define KEY_ESC	65307
+# define KEY_W		119
+# define KEY_A		97
+# define KEY_S		115
+# define KEY_D		100
+# define KEY_TOP	65362
+# define KEY_BOT	65364
+# define KEY_LEFT	65361
+# define KEY_RIGHT	65363
+
 // ENUM
 enum	e_error
 {
@@ -67,7 +80,6 @@ typedef struct s_map
 	int			cc;
 	int			xc;
 	int			pc;
-	t_vector	spawn;
 }				t_map;
 
 typedef struct s_win
@@ -99,6 +111,7 @@ typedef struct s_player
 {
 	t_vector	pos;
 	t_img		sprite;
+	int			moves;
 } t_player;
 
 typedef struct s_game
@@ -111,8 +124,6 @@ typedef struct s_game
 	t_textures	*tex;
 }t_game;
 
-void	print_map(char **map); //TODO: DELETAR NO FINAL
-
 // ERROR HANDLER
 void	ft_free(t_game *game);
 void	*ft_exit(t_game *game, int status, char *msg);
@@ -121,6 +132,7 @@ void	ft_free_matrix(char **matrix);
 
 // INIT GAME MAP AND CHECK MAP
 t_game	*ft_init_struct_game(void);
+t_img	init_s_img(void);
 void	get_map(t_game *game, char *path_map);
 int		is_border(t_game *game, t_vector pos);
 char	**ft_copy_matrix(char **matrix);
@@ -131,4 +143,7 @@ void	init_mlx(t_game *game);
 void	init_sprites(t_game *game);
 int		key_press(int key, t_game *game);
 int	window_close(t_game *game);
+
+//RENDER
+void	render(t_game *game);
 #endif
