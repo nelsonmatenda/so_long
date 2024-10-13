@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:12:55 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/13 15:18:01 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 16:21:21 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	print_sprite(t_game *game, int y, int x)
 		render_sprite(game, game->player->sprite, y, x);
 }
 
-int	render(t_game *game)
+void	render(t_game *game)
 {
 	int	x;
 	int	y;
@@ -55,5 +55,4 @@ int	render(t_game *game)
 		}
 		y++;
 	}
-	return (0);
 }

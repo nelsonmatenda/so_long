@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putpointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nfigueir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:55:47 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/06/10 08:26:41 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 21:34:34 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*hex_to_str(unsigned long n, char *base)
 	char	*hex;
 
 	size = count_hex(n);
-	hex = (char *)malloc(sizeof(char) * (size + 1));
+	hex = (char *)ft_calloc((size + 1), sizeof(char));
 	if (!hex)
 		return (NULL);
 	hex[size] = '\0';

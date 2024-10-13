@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:40:29 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/11 15:25:40 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 16:26:05 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	main(int ac, char **av)
 	hook_close(game);
 	render(game);
 	mlx_loop(game->mlx);
-	return (*(int *)ft_exit(game, SUCCESS, "Great Job"));
+	return (*(int *)ft_exit(game, SUCCESS, NULL));
 }
