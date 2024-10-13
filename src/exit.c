@@ -33,11 +33,11 @@ void	error_msg(int error, char *msg_error)
 void	success_msg(int status)
 {
 	if (status == SUCCESS)
-		ft_printf("\033[0;32mSuccess: You won the game!\033[0m\n");
+		ft_printf("\033[0;32mSuccess:\033[0m You won the game!\033[0m\n");
 	if (status == LOOSE)
-		ft_printf("You loose the game\n");
+		ft_printf("\033[1;33mYou loose the game\n\033[0m");
 	if (status == QUIT)
-		ft_printf("\033[1;33mNotice: Player has exited the game.\033[0m\n");
+		ft_printf("\033[1;33mNotice:\033[0m Player has exited the game.\033[0m\n");
 }
 
 void	*ft_exit(t_game *game, int status, char *msg)

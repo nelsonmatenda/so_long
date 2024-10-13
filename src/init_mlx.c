@@ -14,22 +14,24 @@
 
 static t_img	create_sprite(char *path, t_game *game)
 {
-	t_img sprite;
+	t_img	sprite;
 
-	sprite.img = mlx_xpm_file_to_image(game->mlx, path, &sprite.size.x, &sprite.size.y);
-	if (!sprite.img)
-		ft_exit(game, SPT_ERR, path);
-	sprite.addr = mlx_get_data_addr(sprite.img, &sprite.bits_per_pixel, &sprite.size_line, &sprite.endian);
+	sprite.img = mlx_xpm_file_to_image(game->mlx, path, \
+		&sprite.size.x, &sprite.size.y);
+	if (sprite.img == NULL)
+		ft_exit(game, MLX_ERR, path);
+	sprite.addr = mlx_get_data_addr(sprite.img, \
+		&sprite.bits_per_pixel, &sprite.size_line, &sprite.endian);
 	return (sprite);
 }
 
 void	init_sprites(t_game *game)
 {
-	game->tex->wall = create_sprite("./textures/wall.xpm", game);
-	game->tex->coin = create_sprite("./textures/coin.xpm", game);
-	game->tex->floor = create_sprite("./textures/floor.xpm", game);
-	game->tex->exit = create_sprite("./textures/exit.xpm", game);
-	game->player->sprite = create_sprite("./textures/player.xpm", game);
+	game->tex->wall = create_sprite(WALL_XPM, game);
+	game->tex->coin = create_sprite(COIN_XPM, game);
+	game->tex->floor = create_sprite(FLOOR_XPM, game);
+	game->tex->exit = create_sprite(EXIT_XPM, game);
+	game->player->sprite = create_sprite(PLAYER_XPM, game);
 }
 
 void	init_mlx(t_game *game)

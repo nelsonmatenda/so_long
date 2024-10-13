@@ -25,6 +25,11 @@
 # define IMG_WID 32
 # define IMG_HGHT 32
 # define TITLE "so_long"
+# define WALL_XPM "./textures/wall.xpm"
+# define COIN_XPM "./textures/coin.xpm"
+# define FLOOR_XPM "./textures/floor.xpm"
+# define EXIT_XPM "./textures/exit.xpm"
+# define PLAYER_XPM "./textures/player.xpm"
 
 // KEY CODES
 # define KEY_Q		113
