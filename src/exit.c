@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:34:36 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/10 15:23:17 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 14:50:40 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	error_msg(int error, char *msg_error)
 {
 	if (error == MALLOC_ERROR)
-		ft_printf("\033[1;31mError:\033[0m Memory allocation failed.\n");
+		ft_printf("\033[1;31mError\n=>\033[0m Memory allocation failed.\n");
 	if (error == EXTENSION)
-		ft_printf("\033[1;31mError:\033[0m Invalid file extension.\n");
+		ft_printf("\033[1;31mError\n=>\033[0m Invalid file extension.\n");
 	if (error == FILE_ERROR)
-		ft_printf("\033[1;31mError:\033[0m Failed to open file.\n");
+		ft_printf("\033[1;31mError\n=>\033[0m Failed to open file.\n");
 	if (error == MAP_ERR)
-		ft_printf("\033[1;31mError:\033[0m Something wrong with map.\n");
+		ft_printf("\033[1;31mError\n=>\033[0m Something wrong with map.\n");
 	if (error == MLX_ERR)
-		ft_printf("\033[1;31mError:\033[0m Lib MLX failed.\n");
+		ft_printf("\033[1;31mError\n=>\033[0m Lib MLX failed.\n");
 	if (error == SPT_ERR)
-		ft_printf("\033[1;31mError:\033[0m Sprites not found.\n");
+		ft_printf("\033[1;31mError\n=>\033[0m Sprites not found.\n");
 	if (msg_error)
 		ft_printf("\033[90m%s\033[0m\n", msg_error);
 }

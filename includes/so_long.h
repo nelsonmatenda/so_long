@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:50:21 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/11 13:20:43 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 14:32:54 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@
 # define FLOOR_XPM "./textures/floor.xpm"
 # define EXIT_XPM "./textures/exit.xpm"
 # define PLAYER_XPM "./textures/player.xpm"
+
+// MAP ITEM
+# define WALL	'1'
+# define COIN	'C'
+# define EXIT	'E'
+# define PLAYER	'P'
+# define FLOOR	'0'
 
 // KEY CODES
 # define KEY_Q		113
@@ -131,4 +138,6 @@ void	init_mlx(t_game *game);
 void	init_sprites(t_game *game);
 int		key_press(int key, t_game *game);
 int	window_close(t_game *game);
+
+int	render(t_game *game);
 #endif
