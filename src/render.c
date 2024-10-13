@@ -6,13 +6,13 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:12:55 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/13 15:09:29 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 15:18:01 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	render_sprite(t_game *game, t_img sprite, int line, int column)
+static void	render_sprite(t_game *game, t_img sprite, int line, int column)
 {
 	int	x;
 	int	y;
@@ -32,12 +32,11 @@ void	print_sprite(t_game *game, int y, int x)
 	else if (img == FLOOR)
 		render_sprite(game, game->tex->floor, y, x);
 	else if (img == COIN)
-	{
-		render_sprite(game, game->tex->floor, y, x); // FIRST FLOOR
-		render_sprite(game, game->tex->coin, y, x); // SECOND COIN
-	}
+		render_sprite(game, game->tex->coin, y, x);
 	else if (img == EXIT)
 		render_sprite(game, game->tex->exit, y, x);
+	else if (img == PLAYER)
+		render_sprite(game, game->player->sprite, y, x);
 }
 
 int	render(t_game *game)
