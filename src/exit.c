@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:34:36 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/13 16:25:45 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:29:22 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	success_msg(int status)
 	if (status == LOOSE)
 		ft_printf("\033[1;33mYou loose the game\n\033[0m");
 	if (status == QUIT)
-		ft_printf("\033[1;33mNotice:\033[0m Player has exited the game.\033[0m\n");
+		ft_printf("\033[1;33mNotice:\033[0m \
+		Player has exited the game.\033[0m\n");
 }
 
 void	*ft_exit(t_game *game, int status, char *msg)

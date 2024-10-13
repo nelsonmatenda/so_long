@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 15:37:40 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/13 16:46:02 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:24:06 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static int	is_valid_move(t_game *game, char **map, int x, int y)
 
 static void	player_move(t_game *game, int y, int x)
 {
-	int prev_x;
-	int prev_y;
+	int	prev_x;
+	int	prev_y;
 
 	prev_x = game->player->pos.x;
 	prev_y = game->player->pos.y;

@@ -6,7 +6,7 @@
 /*   By: nfigueir <nfigueir@student.42luanda.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 14:12:55 by nfigueir          #+#    #+#             */
-/*   Updated: 2024/10/13 16:21:21 by nfigueir         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:27:20 by nfigueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	render_sprite(t_game *game, t_img sprite, int line, int column)
 
 void	print_sprite(t_game *game, int y, int x)
 {
-	char img;
+	char	img;
 
 	img = game->map->item[y][x];
 	if (img == WALL)
